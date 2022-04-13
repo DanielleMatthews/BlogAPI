@@ -18,7 +18,7 @@ router.delete('/:id', (req, res)=>{
 
 //update
 router.put('/:id', (req, res)=>{
-    Posts.findByIdAndUpdate(req.params.id, (err, updatedPosts)=>{
+    Posts.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedPosts)=>{
         res.json(updatedPosts)
     })
 })
